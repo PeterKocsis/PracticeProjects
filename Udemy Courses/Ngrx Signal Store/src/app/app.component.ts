@@ -1,14 +1,17 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
+import { QuestionPresenterComponent } from "./components/question-presenter/question-presenter.component";
 import { SharedModule } from './shared.module';
-import { BusyComponent } from "./components/busy/busy.component";
-import { AppStore } from './store/app.store';
+import { ToolbarComponent } from "./components/toolbar/toolbar.component";
+import { ProgressComponent } from "./components/progress/progress.component";
+import { DoneComponent } from "./components/done/done.component";
+import { BusyComponent } from './components/busy/busy.component';
 
 @Component({
     selector: 'app-root',
-    imports: [SharedModule, BusyComponent],
+    imports: [SharedModule, QuestionPresenterComponent, ToolbarComponent, ProgressComponent, DoneComponent, BusyComponent],
     templateUrl: './app.component.html',
-    styleUrl: './app.component.scss', 
+    styleUrl: './app.component.scss'
 })
 export class AppComponent {
-    readonly store = inject(AppStore);
+  title = 'ngrx-quiz';
 }

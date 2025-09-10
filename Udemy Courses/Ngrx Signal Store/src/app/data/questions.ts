@@ -2,42 +2,42 @@ import { Question } from "../models/question.model";
 
 export const QUESTIONS: Question[] =  [
     {
-      caption: ['Red', 'Lime', 'Blue'],
-      answers: ['Black', 'Gray', 'White', 'Brown'],
+      caption: ['red', 'lime', 'blue'],
+      answers: ['black', 'gray', 'white', 'brown'],
       correctIndex: 2,
     },
     {
-      caption: ['Red', 'Black'],
-      answers: ['DarkRed', 'Red', 'Black', 'Gray'],
+      caption: ['red', 'black'],
+      answers: ['darkred', 'Red', 'black', 'gray'],
       correctIndex: 1,
     },
     {
-      caption: ['Blue', 'Red'],
+      caption: ['blue', 'red'],
       answers: ['Magenta', 'Cyan', 'Purple', 'White'],
       correctIndex: 0,
     },
     {
-      caption: ['Blue', 'Lime'],
+      caption: ['blue', 'lime'],
       answers: ['Magenta', 'Cyan', 'White', 'Teal'],
       correctIndex: 1,
     },
     {
-      caption: ['Lime', 'Red'],
+      caption: ['lime', 'red'],
       answers: ['Brown', 'White', 'Orange', 'Yellow'],
       correctIndex: 3,
     },
     {
-      caption: ['Cyan', 'Red'],
+      caption: ['cyan', 'red'],
       answers: ['Magenta', 'Blue', 'White', 'Purple'],
       correctIndex: 2,
     },
     {
-      caption: ['Blue', 'Yellow'],
+      caption: ['blue', 'yellow'],
       answers: ['Green', 'Cyan', 'White', 'Lime'],
       correctIndex: 2,
     },
     {
-      caption: ['Lime', 'Magenta'],
+      caption: ['lime', 'magenta'],
       answers: ['Brown', 'Yellow', 'White', 'Orange'],
       correctIndex: 2,
     }
