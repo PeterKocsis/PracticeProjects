@@ -1,4 +1,10 @@
-@if (icon()) {
-    <mat-icon>{{icon()}}</mat-icon>
-}
-{{caption()}}
+<div style="display: flex; align-items: center;">
+    @if (icon()) {
+        <mat-icon>{{icon()}}</mat-icon>
+    }
+    {{caption()}}
+</div>
+
+<div style="display: flex; align-items: center;">
+    <mat-icon (click)="onReset.emit()">{{resetIcon()}}</mat-icon>
+</div>

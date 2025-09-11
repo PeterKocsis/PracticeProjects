@@ -1,8 +1,11 @@
-<app-toolbar caption="Colors Quiz!" icon="palette" />
-<div class="main">
-    <app-question-presenter />
-    <app-progress 
-        [value]="quizStore.currentQuestionIndex()" 
-        [max]="quizStore.questionCount()">
-    </app-progress>
-</div>
+<app-toolbar caption="Colors Quiz!" icon="palette" editIcon="edit" resetIcon="refresh" (onReset)="quizStore.reset()" />
+@if (quizStore.isDone()) {
+    <app-done></app-done>
+}
+@else {
+    <div class="main">
+        <app-question-presenter />
+        <app-progress [value]="quizStore.currentQuestionIndex()" [max]="quizStore.questionCount()">
+        </app-progress>
+    </div>
+}
