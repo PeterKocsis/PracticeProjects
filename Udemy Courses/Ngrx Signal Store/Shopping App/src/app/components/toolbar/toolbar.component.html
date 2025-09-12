@@ -1,12 +1,17 @@
+@let vm = appStore.cartVm();
+
 <mat-icon class="logo">sensors</mat-icon>
 <span>The Signals Shop</span>
 <input type="search" 
     placeholder="search" 
-    [(ngModel)]="searchValue"/>
+    [ngModel]="appStore.searchWord()"
+    (ngModelChange)="appStore.setSearchWord($event)"
+    />
 <button mat-icon-button class="cart-button"
-    [matBadge]="cartCount()"
-    [matBadgeHidden]="!cartActive()"
-    [disabled]="!cartActive()"
+    [matBadge]="vm.itemsCount"
+    [matBadgeHidden]="!vm.isActive"
+    [disabled]="!vm.isActive"
+    (click)="appStore.viewCart()"
     >
     <mat-icon class="cart">shopping_cart</mat-icon>
 </button>

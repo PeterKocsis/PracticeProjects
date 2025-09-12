@@ -13,11 +13,11 @@
         {{product().unitPrice | currency}}
     </div>
     @if(isInCart()) {
-        <button mat-flat-button>
+        <button mat-flat-button (click)="appStore.viewCart()">
             View Cart
         </button>    
     } @else {
-        <button mat-flat-button tertiary >
+        <button mat-flat-button tertiary (click)="appStore.addToCart(product().id)">
             Add To Cart
         </button>    
     }
