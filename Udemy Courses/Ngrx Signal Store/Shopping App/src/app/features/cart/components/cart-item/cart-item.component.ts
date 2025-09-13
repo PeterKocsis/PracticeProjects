@@ -1,8 +1,9 @@
 import { Component, computed, inject, input } from '@angular/core';
 import { CartItemVm } from '../../view-model/cart-item.vm';
+import { QuantityComponent } from '../quantity/quantity.component';
 import { SharedModule } from '../../../../shared.module';
-import { QuantityComponent } from "../../../quantity/quantity.component";
-import { AppStore } from '../../../../store/app.store';
+import { CartStore } from '../../store/cart.store';
+import { ShopStore } from '../../../../store/shop.store';
 
 @Component({
   selector: 'app-cart-item',
@@ -11,8 +12,7 @@ import { AppStore } from '../../../../store/app.store';
   styleUrl: './cart-item.component.scss'
 })
 export class CartItemComponent {
-readonly appStore = inject(AppStore);
-
+  readonly store = inject(ShopStore);
   readonly item = input.required<CartItemVm>();
   readonly image = computed(() => `images/${this.item().id}.png`);
 

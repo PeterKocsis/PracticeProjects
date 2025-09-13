@@ -9,8 +9,10 @@
   </div>
 </div>
 
-<app-quantity [amount]="item().quantity" (increment)="appStore.incrementItemQuantity(item().id)"
-  (decrement)="appStore.decrementItemQuantity(item().id)" />
+<app-quantity [amount]="item().quantity"
+  (increment)="store.incrementQuantity(item().id)"
+  (decrement)="store.decrementQuantity(item().id)"
+/>
 
 <div class="total">
   {{ item().total | currency }}

@@ -1,9 +1,0 @@
-@let products = appStore.productListVm();
-
-<h1>{{products.productItems.length}} Results</h1>
-<div class="results">
-    @for(product of products.productItems; track product.id) {
-        <app-item-card [product]="product"/>
-        @if (!$last) {<div class="divider"></div>}
-    }    
-</div>
