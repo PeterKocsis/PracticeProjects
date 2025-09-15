@@ -12,7 +12,7 @@ import { ShopStore } from '../../../../store/shop.store';
   styleUrl: './cart-item.component.scss'
 })
 export class CartItemComponent {
-  readonly store = inject(ShopStore);
+  readonly store = inject(CartStore);
   readonly item = input.required<CartItemVm>();
   readonly image = computed(() => `images/${this.item().id}.png`);
 

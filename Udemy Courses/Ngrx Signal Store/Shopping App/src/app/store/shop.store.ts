@@ -1,24 +1,17 @@
 import { patchState, signalStore, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import { initialShopSlice, PersistedShopSlice } from './shop.slice';
 import { computed, effect, Signal } from '@angular/core';
-import { buildCartVm, buildProductListVm } from './shop-vm.builder';
 import * as updaters from './shop.updaters';
+import { buildShopVm } from './shop-vm.builder';
 export const ShopStore = signalStore(
     { providedIn: 'root' },
-    withState(initialShopSlice), 
-    withComputed(store => ({
-        productListVm: computed(() => buildProductListVm(
-            store.products(), 
-            store.searchWord(), 
-            store.cartQuantities())), 
-
-        cartVm: computed(() => buildCartVm(
-            store.products(), 
-            store.cartQuantities(), 
-            store.taxRate(), 
-            store.cartVisible()
+    withState(initialShopSlice),
+    withComputed(store=>({
+        vm: computed(() => buildShopVm(
+            store.cartVisible(), 
+            store.cartQuantities()
         ))
-    })), 
+    })),
     withMethods(store => ({
         setSearchWord: (searchWord: string) => 
             patchState(store, updaters.setSearchWord(searchWord)),
